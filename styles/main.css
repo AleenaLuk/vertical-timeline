@@ -1,0 +1,89 @@
+*{
+  box-sizing: border-box;
+}
+html {
+  background: lightgray;
+}
+
+img {
+  width: 100%;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+.timeline-event {
+  background-color: white;
+  height: 250px;
+  margin-top: 25px;
+  margin-left: 25px;
+  margin-right: 25px;
+  width: 400px;
+  padding:25px;
+}
+
+.timeline-event:first-child {
+  margin-top: 0px !important;
+}
+
+/* .timeline-event:nth-child(1){
+  margin-top: 0px !important;
+} */
+.timeline-event:nth-child(odd){
+  margin-top:300px;
+}
+
+.timeline-event:nth-child(even){
+  float: right;
+  background-color: white;
+}
+
+.timeline-event:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+/* .timeline-event: nth-child() */
+
+/* #2  //boxes  */
+
+
+.timeline {
+  background: lightgray;
+  position: relative;
+}
+.timeline::before {
+  content: '';
+  background: blue;
+  width: 5px;
+  height: 105%;
+  position: absolute;
+  left:50%;
+  transform: translateX(-50%);
+}
+
+.timeline-content {
+  background-color: white;
+  /* height: 250px; */
+}
+
+/* MOBILE, ANYTHING BELOW 1000px */
+@media screen and (max-width: 1000px) {
+
+  .timeline::before {
+    left:0%;
+  }
+  .timeline-event:nth-child(even){
+    float: none;
+  }
+  .timeline-event:nth-child(odd){
+    margin-top:0px;
+  }
+  .timeline-event {
+    margin-left: 25px;
+  }
+
+}
