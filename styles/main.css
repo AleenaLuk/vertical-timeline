@@ -2,42 +2,64 @@
   box-sizing: border-box;
 }
 html {
-  background: lightgray;
+  background: #A9A9A9;
 }
 
 img {
   width: 100%;
 }
 
-ul {
+.timeline-container {
   padding: 0;
   list-style: none;
+  width: 75vw;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+
+  /* background-color: yellow; */
 }
 
-.timeline-event {
+.timeline-container::before {
+  content: '';
+  height: 100%;
+  width: 5px;
+  background: blue;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.timeline-content {
   background-color: white;
-  height: 250px;
-  margin-top: 25px;
-  margin-left: 25px;
-  margin-right: 25px;
-  width: 400px;
+  width: 90%;
+  max-width: 400px;
   padding:25px;
 }
 
-.timeline-event:first-child {
-  margin-top: 0px !important;
+.timeline-content:not(:last-child) {
+  margin-bottom: 25px;
 }
+
+.timeline-content:nth-child(even){
+  margin-left: auto;
+}
+
+
 
 /* .timeline-event:nth-child(1){
   margin-top: 0px !important;
 } */
-.timeline-event:nth-child(odd){
-  margin-top:300px;
+/* .timeline-event:nth-child(odd){
+
+  margin-right: 7%;
 }
 
 .timeline-event:nth-child(even){
   float: right;
   background-color: white;
+  margin-left: 7%;
 }
 
 .timeline-event:after {
@@ -46,18 +68,31 @@ ul {
   clear: both;
 }
 
+.button {
+  background-color: steelblue;
+  border: none;
+  color: white;
+  padding: 11px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+} */
+
 /* .timeline-event: nth-child() */
 
 /* #2  //boxes  */
 
 
-.timeline {
-  background: lightgray;
+/* .timeline {
+  background: #A9A9A9;
   position: relative;
 }
 .timeline::before {
   content: '';
-  background: blue;
+  background: steelblue;
   width: 5px;
   height: 105%;
   position: absolute;
@@ -66,24 +101,24 @@ ul {
 }
 
 .timeline-content {
-  background-color: white;
+  background-color: white; */
+
   /* height: 250px; */
-}
+/* } */
 
 /* MOBILE, ANYTHING BELOW 1000px */
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 768px) {
 
-  .timeline::before {
-    left:0%;
+  .timeline-content{
+    margin-left: auto;
+      width: 90%;
   }
-  .timeline-event:nth-child(even){
-    float: none;
-  }
-  .timeline-event:nth-child(odd){
-    margin-top:0px;
-  }
-  .timeline-event {
-    margin-left: 25px;
+
+
+
+  .timeline-container::before {
+    left: 1%;
+    transform: unset;
   }
 
 }
