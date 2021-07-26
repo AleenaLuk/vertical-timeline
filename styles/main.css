@@ -8,6 +8,7 @@ html {
 
 img {
   width: 100%;
+  height: 100%;
 }
 
 .timeline-container {
@@ -21,6 +22,24 @@ img {
 
   /* background-color: yellow; */
 }
+
+
+
+/*li:nth-child(odd)::after{*/
+/*  width: 0;*/
+/*  height: 0;*/
+/*  border-top: 50px solid transparent;*/
+/*  border-left: 100px solid red;*/
+/*  border-bottom: 50px solid transparent;*/
+/*}*/
+
+/*li:nth-child(odd)::after{*/
+/*  width: 0;*/
+/*  height: 0;*/
+/*  border-top: 50px solid transparent;*/
+/*  border-left: 100px solid red;*/
+/*  border-bottom: 50px solid transparent;*/
+/*}*/
 
 .timeline-container::before {
   content: '';
@@ -42,15 +61,40 @@ img {
 
 }
 
-.timeline-event:nth-child(even) .timeline-content::before{
+.timeline-content:nth-child(1)::after{
+  content: '';
+  position: absolute;
+  right: 670px;
+  top: 40px;
+  width: 0;
+  height: 0;
+  border: medium solid white;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent white;
+}
+
+.timeline-content:nth-child(3)::after{
+  content: '';
+  position: absolute;
+  right: 670px;
+  top: 855px;
+  width: 0;
+  height: 0;
+  border: medium solid white;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent white;
+}
+
+.timeline-content:nth-child(even)::before{
   content: '';
   height: 0;
   width: 0;
-  right: 650px;
+  right: 400px;
+  top: 369px;
   position: absolute;
-  border: medium solid #F5F5F5;
+  border: medium solid white;
   border-width: 10px 10px 10px 0;
-  border-color: transparent #F5F5F5 transparent transparent;
+  border-color: transparent white transparent transparent;
 
 }
 
@@ -62,20 +106,20 @@ img {
   margin-left: auto;
 
 }
- .image {
-   width: 20%;
- }
+.image {
+  width: 100%;
+}
 
- /* .space {
-  position: relative;
-  text-align: center;
-  color: white;
+/* .space {
+ position: relative;
+ text-align: center;
+ color: white;
 }
 
 .bottom-left {
-  position: absolute;
-  bottom: 8px;
-  left: 16px;
+ position: absolute;
+ bottom: 8px;
+ left: 16px;
 } */
 
 .timeline-event:nth-child(odd) .timeline-content::before{
@@ -141,7 +185,7 @@ img {
 
 .second-timebox {
   position: absolute;
-  top: 297px;
+  top: 329px;
   right: 290px;
   background: #EB515C;
   color: #FDF0F5;
@@ -150,8 +194,8 @@ img {
 
 .third-timebox {
   position: absolute;
-  bottom: 234px;
-  right: 63%;
+  bottom: 150px;
+  right: 63.01%;
   background: #EB515C;
   color: #FDF0F5;
   padding: 10px;
@@ -187,9 +231,43 @@ img {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 4px 2px;
+  margin: 20px;
   cursor: pointer;
 }
+
+.bottom-left{
+  font-size: 27px;
+  color: white;
+  position: relative;
+  top: -40px;
+  left: 20px;
+}
+
+.img-container{
+
+text-align: left;
+  width: 100%;
+}
+
+.timeline-content:nth-child(2){
+  padding: 0;
+}
+
+
+.timeline-content:nth-child(2) > p{
+  padding: 0 25px 0 25px;
+}
+
+.timeline-content:nth-child(3) > p{
+  color: #A9A9A9;
+  padding-left: 10px;
+  border-left: solid 4px steelblue;
+}
+
+.timeline-content:nth-child(2) > .bottom-left{
+  padding: 0 25px 0 25px;
+}
+
 
 /* .timeline-event: nth-child() */
 
@@ -213,7 +291,7 @@ img {
 .timeline-content {
   background-color: white; */
 
-  /* height: 250px; */
+/* height: 250px; */
 /* } */
 
 /* MOBILE, ANYTHING BELOW 1000px */
@@ -221,7 +299,7 @@ img {
 
   .timeline-content{
     margin-left: auto;
-      width: 90%;
+    width: 90%;
   }
 
 
